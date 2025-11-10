@@ -1,0 +1,34 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "PICO-8: Run Game",
+            "type": "shell",
+            "command": "/Applications/PICO-8.app/Contents/MacOS/pico8",
+            "args": ["-run", "${workspaceFolder}/game.p8"],
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "never"
+            }
+        },
+        {
+            "label": "PICO-8: Run Tests",
+            "type": "shell",
+            "command": "/Applications/PICO-8.app/Contents/MacOS/pico8",
+            "args": ["-x", "${workspaceFolder}/test.p8"],
+            "problemMatcher": [],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated"
+            }
+        }
+    ]
+}

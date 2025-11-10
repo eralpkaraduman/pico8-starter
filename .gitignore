@@ -1,0 +1,12 @@
+# macOS
+.DS_Store
+
+# PICO-8
+*.p8l
+*.p8.png
+
+# Logs
+*.log
+
+# Test outputs
+test_results.log.p8l
