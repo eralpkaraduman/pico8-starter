@@ -18,8 +18,14 @@
         {
             "label": "PICO-8: Run Tests",
             "type": "shell",
-            "command": "/Applications/PICO-8.app/Contents/MacOS/pico8",
-            "args": ["-x", "${workspaceFolder}/test.p8"],
+            "command": "${workspaceFolder}/lib/picotestdriver/ptd",
+            "args": ["test", "-c", "${workspaceFolder}/test.p8"],
+            "options": {
+                "shell": {
+                    "executable": "/bin/zsh",
+                    "args": ["-l", "-c"]
+                }
+            },
             "problemMatcher": [],
             "group": {
                 "kind": "test",

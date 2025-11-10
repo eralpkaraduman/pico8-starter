@@ -4,4 +4,4 @@ __lua__
 #include lib/picotestdriver/test_framework.lua
 #include lib/picotestdriver/test_utils.lua
 #include src/main.lua
-#include src/test.lua
+#include src/tests.lua

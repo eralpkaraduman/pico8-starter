@@ -2,6 +2,16 @@
 
 PICO-8 development with VS Code and automated testing using [picotestdriver](https://github.com/adamico/picotestdriver).
 
+## Setup
+
+Ensure PICO-8 is in your PATH. Add this to `~/.zshrc`:
+
+```bash
+export PATH="/Applications/PICO-8.app/Contents/MacOS:$PATH"
+```
+
+Then run `source ~/.zshrc`.
+
 ## Quick Start
 
 **Run game:** `Cmd+Shift+B`
@@ -12,7 +22,7 @@ PICO-8 development with VS Code and automated testing using [picotestdriver](htt
 - [game.p8](game.p8) - Main cartridge
 - [test.p8](test.p8) - Test cartridge
 - [src/main.lua](src/main.lua) - Game code
-- [src/test.lua](src/test.lua) - Test code
+- [src/tests.lua](src/tests.lua) - Test suite
 
 ## Development
 
@@ -22,7 +32,7 @@ PICO-8 development with VS Code and automated testing using [picotestdriver](htt
 
 ## Writing Tests
 
-See [src/test.lua](src/test.lua) for examples:
+Tests are in [src/tests.lua](src/tests.lua), which is only included when running test.p8:
 
 ```lua
 function _update60()
@@ -31,7 +41,6 @@ function _update60()
 
     if frame == 1 then
         test_assert(condition, "message")
-        test_assert_equal(actual, expected, "message")
         test_complete()
     end
 end

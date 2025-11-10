@@ -1,16 +1,19 @@
--- Save original _init to test it
-original_init = _init
+-- tests.lua - Test suite for the game
+-- Only runs when test.p8 is executed
 
--- Override _init to initialize both game and tests
+-- Save original _init
+game_init = _init
+
+-- Override _init for testing
 function _init()
-    -- Initialize game code first
-    if original_init then
-        original_init()
+    -- Run game initialization
+    if game_init then
+        game_init()
     end
 
     -- Initialize test framework
     test_init({
-        timeout_frames = 120, -- 2 seconds
+        timeout_frames = 120,
         debug_level = "info"
     })
 
@@ -25,7 +28,7 @@ function _update60()
     -- Run tests on first frame
     if frame == 1 then
         test_log("Testing _init function", "info")
-        test_assert(type(original_init) == "function", "_init should be a function")
+        test_assert(type(game_init) == "function", "_init should be a function")
         test_log("PASS: _init works", "info")
 
         -- Add more tests here as you develop
