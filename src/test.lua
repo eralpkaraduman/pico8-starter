@@ -26,12 +26,12 @@ function _update60()
     if frame == 1 then
         test_log("Testing _init function", "info")
         test_assert(type(original_init) == "function", "_init should be a function")
-        test_log("✓ _init works", "info")
+        test_log("PASS: _init works", "info")
 
         -- Add more tests here as you develop
         -- test_assert_equal(player_x, 64, "player starts at center")
 
-        test_log("✓ All tests passed", "info")
+        test_log("PASS: All tests passed", "info")
         test_complete()
     end
 end
